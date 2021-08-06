@@ -1,0 +1,29 @@
+[library]
+[library.Heatmodel]
+language = "fortran"
+library = "bmiheatf"
+header = ""
+entry_point = "bmi_heat"
+
+[build]
+undef_macros = []
+define_macros = []
+libraries = []
+library_dirs = []
+include_dirs = []
+extra_compile_args = []
+
+[package]
+name = "pymt_heat"
+requirements = [""]
+
+[info]
+github_username = "pymt-lab"
+package_author = "csdms"
+package_author_email = "csdms@colorado.edu"
+package_license = "MIT"
+summary = "PyMT plugin for heat model"
+
+[ci]
+python_version = ["3.8"]
+os = ["linux", "mac", "windows"]
