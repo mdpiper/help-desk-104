@@ -7,7 +7,12 @@ COPY build_bmi_fortran_heat ./build_bmi_fortran_heat
 
 RUN conda update -n base -c conda-forge conda
 RUN conda install -c conda-forge --file requirements.txt
-RUN conda clean --all
+
+RUN git clone https://github.com/csdms/babelizer
+WORKDIR /opt/babelizer
+RUN git checkout mdpiper/help-desk-104
+RUN conda install -c conda-forge --file requirements.txt
+RUN make install
 
 # Persist CONDA_PREFIX through build. Needed to build pymt_heat.
 ENV CONDA_PREFIX=/opt/conda
